@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+}
+section {
+    width: 100%;
+    padding-bottom: 100px;
+
+    .section-title {
+        color: white;
+        font-size: 50px;
+        text-align: center;
+    }
+}
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.banner {
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-image: url("../images/cover.jpg");
+    background-size: cover;
+    background-position: center 0;
+    background-attachment: fixed;
+    .mask {
+        width: 100%;
+        height: 100%;
+        .title {
+            width: 280px;
+            position: relative;
+            top: 50%;
+            left: calc(50% - 140px);
+        }
+    }
+    @media screen and (max-width: 991px) {
+        height: 100vh;
+    }
+}
+
+.nav {
+    width: 100%;
+    height: 60px;
+    background-color: #583a3a;
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+    .left {
+        width: 50%;
+        height: 100%;
+        float: left;
+        .logo {
+            height: 100%;
+            width: 200px;
+            padding: 10px 20px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .right {
+        width: 50%;
+        height: 100%;
+        float: left;
+        .btn {
+            height: 100%;
+            color: white;
+            float: right;
+            text-align: center;
+            line-height: 60px;
+            padding: 0 30px;
+            transition: 0.4s;
+            &:hover {
+                box-shadow: inset 130px 0px 0px #251818;
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        display: none;
+    }
+}
+
+#intro {
+    padding-top: 100px;
+    .card {
+        margin: 20px auto;
+        position: relative;
+        background-color: #222;
+        @media screen and (max-width: 991px) {
+            padding: 0 20px;
+        }
+        .card-text-r {
+            width: 50%;
+            position: absolute;
+            z-index: 8888888;
+            right: 20px;
+            bottom: 20%;
+            background-color: none;
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                position: relative;
+                right: 0;
+                background-color: #fff;
+                padding: 10px 15px;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .card-text-l {
+            width: 50%;
+            position: absolute;
+            z-index: 8888888;
+            left: 20px;
+            bottom: 20%;
+            background-color: none;
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                position: relative;
+                left: 0;
+                background-color: #fff;
+                padding: 10px 15px;
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .card-l {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            img {
+                height: 400px;
+                position: absolute;
+                left: 20px;
+                bottom: 0px;
+                z-index: 22;
+                filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+            }
+            .big-title {
+                position: absolute;
+                z-index: 653;
+                bottom: 25%;
+                font-size: 60px;
+                left: 18%;
+                color: white;
+                margin: 0;
+                text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+                @media screen and (max-width: 991px) {
+                    font-size: 45px;
+                }
+            }
+        }
+        .card-r {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            img {
+                height: 400px;
+                position: absolute;
+                right: 20px;
+                bottom: 0px;
+                z-index: 22;
+                filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+            }
+            .big-title {
+                position: absolute;
+                z-index: 653;
+                bottom: 25%;
+                font-size: 60px;
+                right: 18%;
+                color: white;
+                margin: 0;
+                text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+                @media screen and (max-width: 991px) {
+                    font-size: 45px;
+                }
+            }
+        }
+        .up {
+            width: 100%;
+            height: 35%;
+        }
+
+        .down {
+            width: 100%;
+            height: 65%;
+            background-image: linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%);
+            padding: 50px;
+            border-radius: 2px;
+        }
+    }
+}
+
+#author {
+    .author {
+        @media screen and (max-width: 991px) {
+            padding: 20px;
+        }
+        .parallax {
+            width: 500px;
+            height: 500px;
+            background-image: url("../images/青山.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            // background-position-x: 200px;
+            // background-position-y: 60px;
+            background-attachment: fixed;
+            float: left;
+            @media screen and (max-width: 991px) {
+                width: 100%;
+            }
+        }
+        .author-intro {
+            color: white;
+            width: 50%;
+            height: 100%;
+            float: right;
+            h1 {
+                font-size: 60px;
+            }
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                text-align: center;
+                background-color: #fff;
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+#movies {
+    .posts {
+        margin: auto;
+        @media screen and (max-width: 991px) {
+            padding: 20px;
+        }
+        .post {
+            width: calc(100% / 3 - 40px / 3);
+            float: left;
+            background-color: white;
+            border-radius: 3px;
+            overflow: hidden;
+
+            &:nth-child(2) {
+                margin: 0 20px;
+                @media screen and (max-width: 991px) {
+                    margin: 0px 0px 20px 0px;
+                }
+            }
+            .cover {
+                background-size: cover;
+                background-position: center 0;
+                width: 100%;
+                height: 200px;
+            }
+            .cover1 {
+                background-image: url("../images/fuck.jpg");
+            }
+            .cover2 {
+                background-image: url("../images/zero.jpg");
+            }
+            .cover3 {
+                background-image: url("../images/flower.png");
+            }
+            .context {
+                width: 100%;
+                padding: 10px 20px;
+            }
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

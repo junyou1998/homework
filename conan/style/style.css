@@ -1,0 +1,354 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+}
+
+section {
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+section .section-title {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.banner {
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-image: url("../images/cover.jpg");
+  background-size: cover;
+  background-position: center 0;
+  background-attachment: fixed;
+}
+
+.banner .mask {
+  width: 100%;
+  height: 100%;
+}
+
+.banner .mask .title {
+  width: 280px;
+  position: relative;
+  top: 50%;
+  left: calc(50% - 140px);
+}
+
+@media screen and (max-width: 991px) {
+  .banner {
+    height: 100vh;
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 60px;
+  background-color: #583a3a;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 9999999;
+}
+
+.nav .left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.nav .left .logo {
+  height: 100%;
+  width: 200px;
+  padding: 10px 20px;
+}
+
+.nav .left .logo img {
+  height: 100%;
+}
+
+.nav .right {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.nav .right .btn {
+  height: 100%;
+  color: white;
+  float: right;
+  text-align: center;
+  line-height: 60px;
+  padding: 0 30px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.nav .right .btn:hover {
+  -webkit-box-shadow: inset 130px 0px 0px #251818;
+          box-shadow: inset 130px 0px 0px #251818;
+}
+
+@media screen and (max-width: 991px) {
+  .nav {
+    display: none;
+  }
+}
+
+#intro {
+  padding-top: 100px;
+}
+
+#intro .card {
+  margin: 20px auto;
+  position: relative;
+  background-color: #222;
+}
+
+@media screen and (max-width: 991px) {
+  #intro .card {
+    padding: 0 20px;
+  }
+}
+
+#intro .card .card-text-r {
+  width: 50%;
+  position: absolute;
+  z-index: 8888888;
+  right: 20px;
+  bottom: 20%;
+  background-color: none;
+}
+
+@media screen and (max-width: 991px) {
+  #intro .card .card-text-r {
+    width: 100%;
+    position: relative;
+    right: 0;
+    background-color: #fff;
+    padding: 10px 15px;
+  }
+  #intro .card .card-text-r p {
+    margin: 0;
+  }
+}
+
+#intro .card .card-text-l {
+  width: 50%;
+  position: absolute;
+  z-index: 8888888;
+  left: 20px;
+  bottom: 20%;
+  background-color: none;
+}
+
+@media screen and (max-width: 991px) {
+  #intro .card .card-text-l {
+    width: 100%;
+    position: relative;
+    left: 0;
+    background-color: #fff;
+    padding: 10px 15px;
+  }
+  #intro .card .card-text-l p {
+    margin: 0;
+  }
+}
+
+#intro .card .card-l {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+#intro .card .card-l img {
+  height: 400px;
+  position: absolute;
+  left: 20px;
+  bottom: 0px;
+  z-index: 22;
+  -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+}
+
+#intro .card .card-l .big-title {
+  position: absolute;
+  z-index: 653;
+  bottom: 25%;
+  font-size: 60px;
+  left: 18%;
+  color: white;
+  margin: 0;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 991px) {
+  #intro .card .card-l .big-title {
+    font-size: 45px;
+  }
+}
+
+#intro .card .card-r {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+#intro .card .card-r img {
+  height: 400px;
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  z-index: 22;
+  -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.6));
+}
+
+#intro .card .card-r .big-title {
+  position: absolute;
+  z-index: 653;
+  bottom: 25%;
+  font-size: 60px;
+  right: 18%;
+  color: white;
+  margin: 0;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 991px) {
+  #intro .card .card-r .big-title {
+    font-size: 45px;
+  }
+}
+
+#intro .card .up {
+  width: 100%;
+  height: 35%;
+}
+
+#intro .card .down {
+  width: 100%;
+  height: 65%;
+  background-image: -webkit-linear-gradient(315deg, #79f1a4 10%, #0e5cad 100%);
+  background-image: -o-linear-gradient(315deg, #79f1a4 10%, #0e5cad 100%);
+  background-image: linear-gradient(135deg, #79f1a4 10%, #0e5cad 100%);
+  padding: 50px;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 991px) {
+  #author .author {
+    padding: 20px;
+  }
+}
+
+#author .author .parallax {
+  width: 500px;
+  height: 500px;
+  background-image: url("../images/青山.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  float: left;
+}
+
+@media screen and (max-width: 991px) {
+  #author .author .parallax {
+    width: 100%;
+  }
+}
+
+#author .author .author-intro {
+  color: white;
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+#author .author .author-intro h1 {
+  font-size: 60px;
+}
+
+@media screen and (max-width: 991px) {
+  #author .author .author-intro {
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: black;
+  }
+}
+
+#movies .posts {
+  margin: auto;
+}
+
+@media screen and (max-width: 991px) {
+  #movies .posts {
+    padding: 20px;
+  }
+}
+
+#movies .posts .post {
+  width: calc(100% / 3 - 40px / 3);
+  float: left;
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#movies .posts .post:nth-child(2) {
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 991px) {
+  #movies .posts .post:nth-child(2) {
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+#movies .posts .post .cover {
+  background-size: cover;
+  background-position: center 0;
+  width: 100%;
+  height: 200px;
+}
+
+#movies .posts .post .cover1 {
+  background-image: url("../images/fuck.jpg");
+}
+
+#movies .posts .post .cover2 {
+  background-image: url("../images/zero.jpg");
+}
+
+#movies .posts .post .cover3 {
+  background-image: url("../images/flower.png");
+}
+
+#movies .posts .post .context {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+@media screen and (max-width: 991px) {
+  #movies .posts .post {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
