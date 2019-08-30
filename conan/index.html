@@ -9,7 +9,7 @@
         rel="stylesheet">
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css' />
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
 
@@ -49,8 +49,26 @@
             </a>
         </div>
     </div>
+
     <div class="phone-nav white-icon">
-            <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" onclick="togglePhoneNav()"></i>
+        <div id="menu" class="menu">
+
+
+
+            <a href="#home">
+                <div class="btn">首頁</div>
+            </a>
+            <a href="#movies">
+                <div class="btn">劇場版電影</div>
+            </a>
+            <a href="#author">
+                <div class="btn">作者介紹</div>
+            </a>
+            <a href="#intro">
+                <div class="btn">人物介紹</div>
+            </a>
+        </div>
     </div>
 
 
@@ -167,8 +185,8 @@
         </div>
 
     </div>
-
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="js/script.js"></script>
 
 </body>
 
