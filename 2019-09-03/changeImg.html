@@ -25,17 +25,25 @@
             // 取得src
             imgUrl = img_url.getAttribute('src')
 
+            // if (imgUrl == img1) {
+            //     // img1->img2
+            //     img_url.setAttribute('src', img2)
+            // }
+            // else {
+            //     // img2->img1
+            //     img_url.setAttribute('src', img1)
+            // }
             if (imgUrl == img1) {
                 // img1->img2
-                img_url.setAttribute('src', img2)
+                img_url.src = img2
             }
             else {
                 // img2->img1
-                img_url.setAttribute('src', img1)
+                img_url.src = img1
             }
-
-
         }
+
+        
     </script>
 </body>
 
