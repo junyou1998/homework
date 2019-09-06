@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #222;
+            display: flex;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .tab {
+            width: 500px;
+
+        }
+
+        .tab_btns {
+            display: flex;
+
+
+        }
+
+        .tab_btn {
+            border: solid 1px black;
+            flex-grow: 1;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 7px 7px 0 0;
+            background-color: #d7d7d7;
+            cursor: pointer;
+        }
+
+        .tab_btn:hover {
+            background-color: #e7e7e7;
+        }
+
+        .tab_content {
+            display: none;
+            border: solid 1px black;
+            border-top: none;
+            padding: 10px 0;
+            background-color: #d7d7d7;
+            padding: 10px 20px;
+            border-radius: 0 0 7px 7px;
+        }
+
+        .tab_content.active {
+            display: block;
+            background-color: #fff;
+        }
+
+        .tab_btn.tab_active {
+            border-bottom: none;
+            background-color: #fff;
+        }
+
+        .blank {
+            border: none;
+            border-bottom: 1px solid black;
+            pointer-events: none;
+            background-color: #222;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_btns">
+            <div class="tab_btn tab_active" id="tab_btn1">tab1</div>
+            <div class="tab_btn" id="tab_btn2">tab2</div>
+            <div class="tab_btn" id="tab_btn3">tab3</div>
+            <div class="tab_btn blank" id="tab_btn3"></div>
+        </div>
+        <div class="tab_contents">
+            <div class="tab_content active" id="tab_content1">
+                <h1>title1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus consectetur, rem numquam laboriosam
+                    sint reiciendis quasi nihil minima officia perferendis delectus! Laudantium alias quasi architecto
+                    soluta nulla fugit delectus sit.</p>
+            </div>
+            <div class="tab_content" id="tab_content2">
+                <h1>title2</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet laborum a molestiae animi, optio
+                    omnis odio eos doloremque blanditiis consequatur vitae provident et vel, unde, fugit quaerat sint.
+                    Similique, ea.
+                </p>
+            </div>
+            <div class="tab_content" id="tab_content3">
+                <h1>title3</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, vel doloribus alias aperiam
+                    delectus earum incidunt recusandae dolorem veritatis nisi quasi voluptates fugiat necessitatibus
+                    temporibus? Modi vel non voluptas veritatis.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var tab1 = document.querySelector('#tab_btn1')
+        var tab2 = document.querySelector('#tab_btn2')
+        var tab3 = document.querySelector('#tab_btn3')
+
+        var content1 = document.querySelector('#tab_content1')
+        var content2 = document.querySelector('#tab_content2')
+        var content3 = document.querySelector('#tab_content3')
+
+        tab1.onclick = function () {
+            content1.classList.add('active')
+            tab1.classList.add('tab_active');
+
+            content2.classList.remove('active');
+            content3.classList.remove('active');
+            tab2.classList.remove('tab_active');
+            tab3.classList.remove('tab_active');
+
+        }
+        tab2.onclick = function () {
+            content2.classList.add('active');
+            tab2.classList.add('tab_active');
+
+            content1.classList.remove('active');
+            content3.classList.remove('active');
+            tab1.classList.remove('tab_active');
+            tab3.classList.remove('tab_active');
+        }
+        tab3.onclick = function () {
+            content3.classList.add('active');
+            tab3.classList.add('tab_active');
+
+
+            content1.classList.remove('active');
+            content2.classList.remove('active');
+            tab1.classList.remove('tab_active');
+            tab2.classList.remove('tab_active');
+        }
+
+    </script>
+</body>
+
+</html>
