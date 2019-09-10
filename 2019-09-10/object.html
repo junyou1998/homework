@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: microsoft jhenghei;
+        }
+
+        body {
+            background-color: #222;
+        }
+        section{
+            padding: 50px 0;
+        }
+        .container {
+            max-width: 1140px;
+            margin: auto;
+
+        }
+
+        .w-4 {
+            width: 33.33%;
+            padding: 10px;
+        }
+
+        .cards {
+            display: flex;
+        }
+
+        .card {
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #f7f7f7;
+            transition: 0.5s;
+        }
+
+        .content {
+            padding: 10px 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0px 2px 20px rgba(255, 255, 255, 0.8);
+            transform: scale(1.02)
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .name {
+            font-size: 30px;
+        }
+
+        .name .nickname {
+            font-size: 20px;
+            color: #666;
+        }
+    </style>
+
+    <section>
+        <div class="container">
+            <div class="cards">
+                <!-- <div class="w-4">
+                <div class="card">
+                    <img src="https://pbs.twimg.com/profile_images/866163952480210944/BkwnL5xk_400x400.jpg" alt="">
+                    <div class="content">
+                        <div class="name">蕭淳嚴<span class="nickname">(熊)</span></div>
+                        <hr>
+                        <p>身高: 165</p>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-4">
+                <div class="card">
+                    <img src="https://pbs.twimg.com/profile_images/866163952480210944/BkwnL5xk_400x400.jpg" alt="">
+                    <div class="content">
+                        <div class="name">蕭淳嚴<span class="nickname">nickname</span></div>
+                        <hr>
+                        <p>身高: 165</p>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-4">
+                <div class="card">
+                    <img src="https://pbs.twimg.com/profile_images/866163952480210944/BkwnL5xk_400x400.jpg" alt="">
+                    <div class="content">
+                        <div class="name">蕭淳嚴<span class="nickname">nickname</span></div>
+                        <hr>
+                        <p>身高: 165</p>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var people = [
+            {
+                name: "蕭淳嚴",
+                nickName: "熊",
+                height: 173,
+                isMan: true,
+                hobby: ["詐騙", "日文"],
+                photoUrl: "https://pbs.twimg.com/profile_images/866163952480210944/BkwnL5xk_400x400.jpg"
+            },
+
+            {
+                name: "胡閔凱",
+                nickName: "爺爺",
+                height: 168,
+                isMan: true,
+                hobby: ["寫程式", "當狗狗"],
+                photoUrl: "https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/50439814_2945130848845725_2414113615712878592_n.jpg?_nc_cat=102&_nc_oc=AQl13ePDG9D9B8FufAWuUx7AIbbKaQrK9mxKEZvE2dPF-GH7Zgsv5ZqOZGF0zySxE_Q&_nc_ht=scontent-tpe1-1.xx&oh=4054d8736c11f9d8863a0d471974a142&oe=5DF5B48D"
+            },
+            {
+                name: "林敬傑",
+                nickName: "麥當勞叔叔",
+                height: 180,
+                isMan: true,
+                hobby: ["吃麥當勞", "寫網頁"],
+                photoUrl: "https://ct.yimg.com/xd/api/res/1.2/FkCwhd.Qrdj.JnOn6W1G5Q--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7Zmk9ZmlsbDtoPTY0MDtxPTg1O3JvdGF0ZT1hdXRvO3c9NjQw/https://s.yimg.com/ob/image/2a44a040-3e8f-46ba-9bea-dbb1d7f8cb68.jpg"
+            },
+        ]
+
+        people.forEach(person => {
+            document.querySelector(".cards").innerHTML += `
+            <div class="w-4">
+                <div class="card">
+                    <img src=${person.photoUrl} alt="">
+                    <div class="content">
+                        <div class="name">${person.name}<span class="nickname">(${person.nickName})</span></div>
+                        <hr>
+                        <p>身高: ${person.height} 公分</p>
+                        <p>興趣: ${person.hobby}</p>
+                    </div>
+
+                </div>
+            </div>
+            `
+        });
+    </script>
+</body>
+
+</html>
