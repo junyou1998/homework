@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'/>
+</head>
+
+<body>
+    <style>
+        * {
+            font-family: microsoft jhenghei;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 1140px;
+            margin: auto;
+        }
+
+        .airBox {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 2px 20px rgba(0,0,0,0.3);
+            width: 400px;
+            padding: 10px 20px;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        .left{
+            flex-grow: 1;
+        }
+        .right{
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+        }
+        .conditionImg{
+            font-size: 80px;
+            color: rgb(228, 182, 30);
+            text-align: center;
+        }
+        .deco{
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 73, 49, 0.08);
+            position: absolute;
+            left: -50px;
+            top: -20px;
+            border-radius: 50%;
+        }
+        .deco2{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 73, 49, 0.08);
+            position: absolute;
+            left: -50px;
+            top: -20px;
+            border-radius: 50%;
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="airBoxs">
+            
+        </div>
+    </div>
+
+    <script>
+        // const aqiUrl = "https://opendata.epa.gov.tw/api/v1/AQI?%24skip=0&%24top=1000&%24format=json"
+        const apiUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-830DC1C1-EDFF-404E-8292-D8A6FE8433D9&locationName=%E8%87%BA%E4%B8%AD%E5%B8%82"
+        let data 
+        fetch(apiUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                console.log(myJson);
+                data = myJson
+                let location = data.records.location[0].locationName;
+                let condition = data.records.location[0].weatherElement[0].time[0].parameter.parameterName
+                let minTemp = data.records.location[0].weatherElement[2].time[0].parameter.parameterName
+                let maxTemp = data.records.location[0].weatherElement[4].time[0].parameter.parameterName
+                let rain = data.records.location[0].weatherElement[1].time[0].parameter.parameterName
+                let rainn = parseInt(rain)
+                let conImg
+                if(rainn<20){
+                    conImg = "fas fa-sun"
+                }
+                else if (rainn> 20 && rainn< 60){
+                    conImg = "fas fa-cloud-sun"
+                }
+                else{
+                    conImg = "fas fa-cloud-showers-heavy"
+                }
+                console.log(location,condition,minTemp,maxTemp,rain)
+
+                let airBox = document.querySelector('.airBoxs')
+                airBox.innerHTML = 
+                `
+                <div class="airBox">
+                        <div class="deco"></div>
+                        <div class="deco2"></div>
+                <div class="left">
+                    <h1 class="location-title">${location}</h1>
+                    <div class="condition">${condition}</div>
+                    <div class="temp">氣溫: <span class="Min-temp">${minTemp}</span>~<span class="Max-temp">${maxTemp}</span> 度</div>
+                    <div class="rain">降雨率: <span class="rain-num">${rain}</span>%</div>
+                </div>
+                <div class="right">
+                    <div class="conditionImg">
+                            <i class="${conImg}"></i>
+                    </div>
+                </div>
+
+            </div>
+                `
+            });
+    </script>
+</body>
+
+</html>
