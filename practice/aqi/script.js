@@ -1,9 +1,15 @@
 const aqiUrl = 'https://opendata.epa.gov.tw/api/v1/AQI?%24skip=0&%24top=1000&%24format=json'
 const lists = document.querySelector('.lists')
+const card = document.querySelector('.card')
 const search = document.querySelector('#search')
 const timestamp = document.querySelector('.timestamp')
 let aqiData = []
 let find = 0
+let userLat 
+let userLong
+let nearby=1000000000000
+let nearLat
+let nearLong
 
 fetch(aqiUrl)
     .then(function (response) {
@@ -13,7 +19,62 @@ fetch(aqiUrl)
         aqiData = wholeData
         console.log(aqiData)
         timestamp.innerHTML = `最後更新時間:${wholeData[0].PublishTime}`
+
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            userLat = position.coords.latitude
+            userLong = position.coords.longitude
+
+
+            console.log(userLat,userLong)
+
+            aqiData.forEach(data=>{
+
+                // console.log('緯度差的平方:',Math.pow(userLat - data.Latitude,2))
+                // console.log('經度差的平方:',Math.pow(userLong - data.Longitude,2))
+                
+                let distance = Math.sqrt(Math.pow(userLat - data.Latitude,2)+Math.pow(userLong - data.Longitude,2))
+                // console.log('兩地的距離',distance)
+
+                if(distance<nearby){
+                    nearby = distance
+                    nearLat= data.Latitude
+                    nearLong = data.Longitude
+                    
+                }
+                else{
+                    
+                }
+                
+
+            })
+
+            console.log(nearby)
+            console.log('緯度:',nearLat)
+            console.log('經度:', nearLong)
+
+
+            aqiData.forEach(data=>{
+                if(nearLat == data.Latitude && nearLong == data.Longitude){
+                    console.log('i find you',data.Latitude,data.Longitude)
+
+                    card.innerHTML = `
+                    <h1>${data.SiteName}</h1>
+                    <div class="status good">${data.Status}</div>
+                    <div class="aqi">AQI指數 : ${data.AQI}</div>
+                    `
+
+                }
+            })
+        });
+
+
+
         aqiData.forEach(data => {
+            // console.log(data.Latitude,data.Longitude)
+            
+
 
             let aqicolor = ""
             switch (data.Status) {
@@ -148,3 +209,7 @@ $('#search').focus(
         function () {
             $(this).parent('div').removeClass('searchFocus');
         });
+
+
+
+
