@@ -1,0 +1,37 @@
+body {
+    padding-top: 55px;
+}
+
+
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-brand img {
+        height: 100px;
+        transition: .5s;
+    }
+
+    .nav-item .nav-link {
+        padding: 50px 30px;
+        transition: .3s;
+    }
+
+    .nav-item .nav-link:hover {
+        background-color: #555;
+    }
+
+}
+
+.navbar.active{
+    .navbar-brand img {
+        height: 40px;
+    }
+    .nav-item .nav-link {
+        padding: 17px 15px;
+    }
+}
+.swiper-container{
+    height: 750px;
+}
