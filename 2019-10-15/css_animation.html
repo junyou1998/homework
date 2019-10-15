@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        .box {
+            width: 100px;
+            height: 210px;                                     
+            /* background-color: rgb(0, 255, 200); */
+            background-image: linear-gradient(30deg,#fff 10%,red 10%,red 20%,#fff 20%,#fff 30%,red 30%,red 40%,#fff 40%,#fff 50%,red 50%,red 60%,#fff 60%,#fff 70%,red 70%,red 80%,#fff 80%,#fff 90%,red 90%);
+            background-size: 150% 200%;
+            /* transition: 1s; */
+            animation: rotate 1s infinite linear;
+            
+        }
+
+        /* .box:hover {
+            opacity: 0.2;
+            transform: rotate(10deg) translate(100px,100px);
+        } */
+        @keyframes rotate{
+            0%{
+                background-position: 0% 0%;
+            }
+            100%{
+                background-position: 0% 50%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

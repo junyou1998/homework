@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(212, 200, 88);
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(30, 200, 192);
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 116, 225);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"> </script>
+
+    <script>
+        // TweenMax.to('.box', 1, {
+        //     backgroundColor: 
+        //     "green"
+        // });
+
+        // TweenMax.from('.box', 1, {
+        //     backgroundColor: 
+        //     "black"
+        // });
+
+        // TweenMax.fromTo('.box', 1, {
+        //     backgroundColor: "black"
+        // }, {
+        //     backgroundColor: "orange",
+        //     transform: "translate(100px,100px)"
+        // });
+
+
+
+        var tl = new TimelineLite();
+        tl.add(TweenLite.to(".box", 1, {
+            left: 100
+        })); //将一个动画添加到时间轴
+        tl.add(TweenLite.to(".box1", 1, {
+            top: 50
+        })); //将一个动画添加到时间轴末端，即与前一个动画接续
+        tl.add(TweenLite.to(".box2", 1, {
+            opacity: 0
+        })); //将一个动画添加到时间轴末端，即与前一个动画接续
+
+
+        
+    </script>
+</body>
+
+</html>
