@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' />
+    <style>
+        .container {
+            max-width: 1140px;
+            margin: auto;
+        }
+
+        .tab {
+            width: 500px;
+        }
+        .content{
+            width: 500px;
+            height: 300px;
+        }
+        .tabBtns {
+            display: flex;
+        }
+
+        .tabBtns .tabBtn {
+            flex-grow: 1;
+            text-align: center;
+            padding: 10px 0;
+            border: solid black 1px;
+            background-color: #d7d7d7;
+        }
+
+        .content {
+            border: solid black 1px;
+            padding: 10px 20px;
+            display: none;
+            
+        }
+
+        .tabBtn.active {
+            background-color: #fff;
+        }
+
+        .content.active {
+            display: block;
+        }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="tab">
+            <div class="tabBtns">
+                <div class="tabBtn active">tab1</div>
+                <div class="tabBtn">tab2</div>
+            </div>
+            <div class="contents">
+                <div class="content active">
+                    <div class="swiper-container gallery1" id="swiper1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=10)"></div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=11)"></div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=12)"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next swiper-button-white"></div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                    </div>
+                </div>
+                <div class="content"> <div class="swiper-container gallery2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=22)"></div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=24)"></div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://picsum.photos/1920/1080?random=15)"></div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next swiper-button-white"></div>
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                    </div></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var tabs = document.querySelectorAll('.tabBtn')
+        var contents = document.querySelectorAll('.content')
+
+
+        for (var i = 0; i < tabs.length; i++) {
+            const tab = tabs[i]
+            const content = contents[i]
+
+            tab.onclick = function () {
+                remove()
+                tab.classList.add('active')
+                content.classList.add('active')
+
+
+                var gallery1 = new Swiper('.gallery1', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+
+        var gallery2 = new Swiper('.gallery2', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+
+            }
+        }
+
+
+        function remove() {
+            for (var i = 0; i < tabs.length; i++) {
+                const tab = tabs[i]
+                const content = contents[i]
+
+                tab.classList.remove('active')
+                content.classList.remove('active')
+            }
+        }
+
+        var gallery1 = new Swiper('.gallery1', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            observer:true,//修改swiper自己或子元素時,自動初始化swiper
+    observeParents:true
+        });
+
+        var gallery2 = new Swiper('.gallery2', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            observer:true,//修改swiper自己或子元素時,自動初始化swiper
+    observeParents:true
+        });
+    </script>
+</body>
+
+
+</html>
