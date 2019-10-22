@@ -1,0 +1,15 @@
+* {
+  font-family: microsoft jhenghei;
+}
+
+.head {
+  background-color: #700fee;
+  color: #fff;
+}
+
+.progressArea .progress_bar {
+  height: 20px;
+  width: 100%;
+  border: solid red 5px;
+}
+/*# sourceMappingURL=style.css.map */
