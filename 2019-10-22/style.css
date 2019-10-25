@@ -1,7 +1,11 @@
 * {
-  font-family: microsoft jhenghei;
+  font-family: "Noto Sans TC", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  position: relative;
 }
 
 .todolist {
@@ -12,11 +16,11 @@
 }
 
 .header {
-  background-color: #700fee;
+  background-color: #725fef;
   color: #fff;
   padding: 10px 20px 60px 20px;
-  -webkit-box-shadow: 0px 0px 10px rgba(112, 15, 238, 0.6);
-          box-shadow: 0px 0px 10px rgba(112, 15, 238, 0.6);
+  -webkit-box-shadow: 0px 0px 10px rgba(114, 95, 239, 0.6);
+          box-shadow: 0px 0px 10px rgba(114, 95, 239, 0.6);
   z-index: 2;
 }
 
@@ -39,7 +43,7 @@
 .progressArea .progress_bar {
   height: 25px;
   width: 100%;
-  border: solid #2b75ff 3px;
+  border: solid #4286e9 3px;
   margin-bottom: 10px;
   padding: 2px;
   border-radius: 5px;
@@ -48,29 +52,30 @@
 .progressArea .progress_bar .progress_status {
   width: 50%;
   height: 100%;
-  background-color: #2b75ff;
+  background-color: #4286e9;
   border-radius: 3px;
 }
 
 .progressArea .progress_bar.danger {
-  border: solid red 3px;
+  border: solid #ed4f4e 3px;
 }
 
 .progressArea .progress_bar.danger .progress_status {
-  background-color: red;
-}
-
-.todosArea {
-  padding: 20px 20px;
+  background-color: #ed4f4e;
 }
 
 .todosArea .todos {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 50vh;
+  padding: 20px 20px;
+  overflow: scroll visible;
 }
 
 .todosArea .todos .todo {
+  overflow: hidden;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   display: -webkit-box;
@@ -79,14 +84,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 10px;
+  padding: 5px 0;
   margin-bottom: 20px;
-}
-
-.todosArea .todos .todo input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  position: relative;
 }
 
 .todosArea .todos .todo .todo_time {
@@ -100,31 +100,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin: 0 10px;
 }
 
 .todosArea .todos .todo .todo_title {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+  font-size: 20px;
 }
 
-.todosArea .todos .todo .status {
-  background-color: red;
-  padding: 2px 15px;
+.todosArea .todos .todo .status_area .status {
+  background-color: #ed4f4e;
   color: white;
   border-radius: 3px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  height: 30px;
+  width: 55px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .todosArea .todos .todo .cancel {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  margin-left: 5px;
 }
 
 .todosArea .todos .todo .cancel .cancel_btn {
@@ -148,6 +146,57 @@
   font-size: 15px;
 }
 
+.todosArea .todos .todo .slide_area {
+  height: 100%;
+  width: 140px;
+  background-color: blue;
+  position: absolute;
+  right: -140px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-decoration: underline;
+}
+
+.todosArea .todos .todo .slide_area.slide_control {
+  right: 0px;
+}
+
+.todosArea .todos .todo .slide_area .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ed4f4e;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.todosArea .todos .todo .slide_area .edit {
+  background-color: #45FF99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .add_btn {
   width: 60px;
   height: 60px;
@@ -169,15 +218,136 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
+  z-index: 20;
 }
 
 .add_panel {
   width: 100%;
-  height: 300px;
+  height: 60vh;
   border-radius: 20px 20px 0 0;
+  padding: 100px 0 0 0;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
-  bottom: -240px;
-  z-index: -1;
+  bottom: calc(-60vh + 60px);
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.add_panel.extend {
+  bottom: 0px;
+  padding: 20px;
+}
+
+.add_panel .todo_status .btn {
+  background-color: white;
+  outline: none;
+  color: white;
+  padding: 6px 2px;
+  margin: 20px 10px;
+}
+
+.add_panel .todo_status .btn:focus {
+  border: solid 1px #4286e9;
+}
+
+.add_panel .todo_status .btn span {
+  background-color: #4286e9;
+  padding: 3px 20px;
+  border-radius: 3px;
+}
+
+.add_panel .todo_status .btn.emergency span {
+  background-color: #ed4f4e;
+}
+
+.add_panel .todo_status .btn.emergency:focus {
+  border: solid 1px #ed4f4e;
+}
+
+.add_panel .todo_status .btn.pending span {
+  background-color: #e87f52;
+}
+
+.add_panel .todo_status .btn.pending:focus {
+  border: solid 1px #e87f52;
+}
+
+.mask {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), to(rgba(255, 255, 255, 0.7)));
+  background-image: linear-gradient(transparent 70%, rgba(255, 255, 255, 0.7));
+  pointer-events: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.mask.active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #d7d7d7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.datepicker {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.datepicker.time {
+  width: 55px;
+}
+
+.datepicker .swiper-container {
+  width: 100%;
+  height: 100%;
+  background-color: #4286e9;
+}
+
+.datepicker .swiper-container.orange {
+  background-color: #e87f52;
+}
+
+.datepicker .swiper-container .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-slide.swiper-slide-active h1 {
+  font-size: 25px;
+  color: white;
+}
+
+.btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

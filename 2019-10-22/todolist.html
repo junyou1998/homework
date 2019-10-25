@@ -10,6 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css' />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,45 +30,366 @@
         </div>
         <div class="todosArea">
             <ul class="todos">
-                <li class="todo">
-                    <input type="checkbox" name="" id="">
-                    <div class="todo_time">
-                        <div class="start_time">07:00</div>
-                        <i class="fas fa-sort-down"></i>
-                        <div class="end_time">09:30</div>
+                <li class="todo d-flex">
+                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
+                        <div class="todo_time">
+                            <div class="start_time">07:00</div>
+                            <i class="fas fa-sort-down"></i>
+                            <div class="end_time">09:30</div>
+                        </div>
+                        <div class="todo_title">吃早餐</div>
                     </div>
-                    <div class="todo_title">吃早餐</div>
-                    <div class="status">緊急</div>
-                    <div class="cancel">
-                        <div class="cancel_btn">
-                            <i class="fas fa-times"></i>
+                    <div class="col-3 d-flex p-0 align-items-center">
+                        <div class="status_area"><div class="status d-flex">緊急</div></div>
+                        <div class="cancel">
+                            <div class="cancel_btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li class="todo">
-                    <input type="checkbox" name="" id="">
-                    <div class="todo_time">
-                        <div class="start_time">07:00</div>
-                        <i class="fas fa-sort-down"></i>
-                        <div class="end_time">09:30</div>
+                    <div class="slide_area">
+                        <div class="delete">刪除</div>
+                        <div class="edit">編輯</div>
                     </div>
-                    <div class="todo_title">吃早餐</div>
-                    <div class="status">緊急</div>
-                    <div class="cancel">
-                        <div class="cancel_btn">
-                            <i class="fas fa-times"></i>
+
+                </li>
+                <li class="todo d-flex">
+                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
+                        <div class="todo_time">
+                            <div class="start_time">07:00</div>
+                            <i class="fas fa-sort-down"></i>
+                            <div class="end_time">09:30</div>
+                        </div>
+                        <div class="todo_title">吃早餐</div>
+                    </div>
+                    <div class="col-3 d-flex p-0 align-items-center">
+                        <div class="status_area">
+                            <div class="status d-flex">緊急</div>
+                        </div>
+                        <div class="cancel">
+                            <div class="cancel_btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
                         </div>
                     </div>
+                    <div class="slide_area">
+                        <div class="delete">刪除</div>
+                        <div class="edit">編輯</div>
+                    </div>
+                
                 </li>
+                <li class="todo d-flex">
+                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
+                        <div class="todo_time">
+                            <div class="start_time">07:00</div>
+                            <i class="fas fa-sort-down"></i>
+                            <div class="end_time">09:30</div>
+                        </div>
+                        <div class="todo_title">吃早餐</div>
+                    </div>
+                    <div class="col-3 d-flex p-0 align-items-center">
+                        <div class="status_area">
+                            <div class="status d-flex">緊急</div>
+                        </div>
+                        <div class="cancel">
+                            <div class="cancel_btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_area">
+                        <div class="delete">刪除</div>
+                        <div class="edit">編輯</div>
+                    </div>
+                
+                </li>
+                <li class="todo d-flex">
+                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
+                        <div class="todo_time">
+                            <div class="start_time">07:00</div>
+                            <i class="fas fa-sort-down"></i>
+                            <div class="end_time">09:30</div>
+                        </div>
+                        <div class="todo_title">吃早餐</div>
+                    </div>
+                    <div class="col-3 d-flex p-0 align-items-center">
+                        <div class="status_area">
+                            <div class="status d-flex">緊急</div>
+                        </div>
+                        <div class="cancel">
+                            <div class="cancel_btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_area">
+                        <div class="delete">刪除</div>
+                        <div class="edit">編輯</div>
+                    </div>
+                
+                </li>
+                
             </ul>
         </div>
         <div class="add_btn"><i class="fas fa-plus"></i></div>
         <div class="add_panel">
+            <div class="form-group">
+                <label for="">事項名稱</label>
+                <input type="text" class="form-control">
+                <label for="">時間</label>
+                <div class="row">
+                    <div class="col-6 d-flex">
+                        <div class="datepicker">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>2018</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2019</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2020</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2021</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="datepicker time">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>20</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>21</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>222</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>23</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>24</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>AM</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>PM</h1>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6 d-flex">
+                        <div class="datepicker">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>2018</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2019</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2020</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2021</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="datepicker time">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>20</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>21</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>222</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>23</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>24</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>00</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>01</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>02</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>03</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>04</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>AM</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>PM</h1>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center todo_status">
+                    <button class="btn"><span>正常</span></button>
+                    <button class="btn emergency"><span>緊急</span></button>
+                    <button class="btn pending"><span>暫緩</span></button>
+                </div>
+
+            </div>
         </div>
     </div>
 
-
+    <div class="mask"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>
