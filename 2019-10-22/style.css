@@ -122,15 +122,14 @@ body {
 }
 
 .todosArea .todos .todo .cancel {
-  margin-left: 5px;
+  margin-right: 8px;
+  height: 50px;
 }
 
 .todosArea .todos .todo .cancel .cancel_btn {
   width: 20px;
-  height: 20px;
-  background-color: #b2b2b2;
-  border-radius: 50%;
-  color: white;
+  height: 100%;
+  color: #b2b2b2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,10 +139,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.todosArea .todos .todo .cancel .cancel_btn.rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .todosArea .todos .todo .cancel .cancel_btn .fas {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .todosArea .todos .todo .slide_area {
@@ -159,10 +166,11 @@ body {
   -webkit-transition: .3s;
   transition: .3s;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .todosArea .todos .todo .slide_area.slide_control {
-  right: 0px;
+  right: 30px;
 }
 
 .todosArea .todos .todo .slide_area .delete {
@@ -205,8 +213,6 @@ body {
   position: fixed;
   bottom: 30px;
   left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
   color: white;
   font-size: 35px;
   display: -webkit-box;
@@ -220,17 +226,26 @@ body {
           align-items: center;
   cursor: pointer;
   z-index: 20;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.add_btn.rotate {
+  -webkit-transform: translate(-50%) rotate(-45deg);
+          transform: translate(-50%) rotate(-45deg);
 }
 
 .add_panel {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   border-radius: 20px 20px 0 0;
   padding: 100px 0 0 0;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
-  bottom: calc(-60vh + 60px);
+  bottom: calc(-70vh + 60px);
   background-color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -276,6 +291,13 @@ body {
   border: solid 1px #e87f52;
 }
 
+.add_panel .add_todo .add {
+  padding: 3px 20px;
+  background-color: #725fef;
+  color: white;
+  border-radius: 3px;
+}
+
 .mask {
   width: 100%;
   height: 100vh;
@@ -292,6 +314,7 @@ body {
 
 .mask.active {
   background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: visible;
 }
 
 h1 {

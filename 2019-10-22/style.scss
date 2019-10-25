@@ -66,6 +66,7 @@ body {
         height: 50vh;
         padding: 20px 20px;
         overflow: scroll visible;
+        
         // overflow-y: scroll;
         .todo {
             overflow: hidden;
@@ -83,6 +84,7 @@ body {
             }
             .todo_title {
                 font-size: 20px;
+                // text-decoration:line-through;
             }
             .status_area {
                 .status {
@@ -97,18 +99,22 @@ body {
             }
 
             .cancel {
-                margin-left: 5px;
+                margin-right: 8px;
+                height: 50px;
                 .cancel_btn {
                     width: 20px;
-                    height: 20px;
-                    background-color: #b2b2b2;
-                    border-radius: 50%;
-                    color: white;
+                    height: 100%;
+                    color: #b2b2b2;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    transition: .5s;
+                    cursor: pointer;
+                    &.rotate{
+                        transform: rotate(180deg);
+                    }
                     .fas {
-                        font-size: 15px;
+                        font-size: 20px;
                     }
                 }
             }
@@ -122,8 +128,9 @@ body {
                 display: flex;
                 transition: .3s;
                 text-decoration: underline;
+                cursor: pointer;
                 &.slide_control{
-                    right: 0px;
+                    right: 30px;
                 }
                 .delete{
                     display: flex;
@@ -151,7 +158,6 @@ body {
     position: fixed;
     bottom: 30px;
     left: 50%;
-    transform: translate(-50%);
     color: white;
     font-size: 35px;
     display: flex;
@@ -159,15 +165,21 @@ body {
     align-items: center;
     cursor: pointer;
     z-index: 20;
+    transform:  translate(-50%);
+    transition: .3s;
+    &.rotate{
+        transform:  translate(-50%) rotate(-45deg);
+    }
+    
 }
 .add_panel {
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     border-radius: 20px 20px 0 0;
     padding: 100px 0 0 0;
     box-shadow: 0px 0px 10px rgba(black, 0.2);
     position: absolute;
-    bottom: calc(-60vh + 60px);
+    bottom: calc(-70vh + 60px);
     background-color: #fff;
     transition: 0.5s;
     z-index: 2;
@@ -208,6 +220,14 @@ body {
             }
         }
     }
+    .add_todo{
+        .add{
+            padding: 3px 20px;
+            background-color: $purple;
+            color: white;
+            border-radius: 3px;
+        }
+    }
 }
 .mask {
     width: 100%;
@@ -221,6 +241,7 @@ body {
     transition: 0.3s;
     &.active {
         background-color: rgba(white, 0.6);
+        pointer-events: visible;
     }
 }
 h1 {
