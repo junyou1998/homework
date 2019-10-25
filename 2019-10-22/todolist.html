@@ -30,8 +30,12 @@
         </div>
         <div class="todosArea">
             <ul class="todos">
+                
                 <li class="todo d-flex">
-                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
+                    <div class="col-9 d-flex align-items-center"><label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                         <div class="todo_time">
                             <div class="start_time">07:00</div>
                             <i class="fas fa-sort-down"></i>
@@ -40,7 +44,9 @@
                         <div class="todo_title">吃早餐</div>
                     </div>
                     <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-                        <div class="status_area"><div class="status d-flex">緊急</div></div>
+                        <div class="status_area">
+                            <div class="status d-flex">緊急</div>
+                        </div>
                         <div class="cancel">
                             <div class="cancel_btn">
                                 <i class="fas fa-chevron-left"></i>
@@ -53,104 +59,8 @@
                     </div>
 
                 </li>
-                <li class="todo d-flex">
-                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
-                        <div class="todo_time">
-                            <div class="start_time">07:00</div>
-                            <i class="fas fa-sort-down"></i>
-                            <div class="end_time">09:30</div>
-                        </div>
-                        <div class="todo_title">吃早餐</div>
-                    </div>
-                    <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-                        <div class="status_area">
-                            <div class="status d-flex">緊急</div>
-                        </div>
-                        <div class="cancel">
-                            <div class="cancel_btn">
-                                <i class="fas fa-chevron-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_area">
-                        <div class="delete">刪除</div>
-                        <div class="edit">編輯</div>
-                    </div>
                 
-                </li><li class="todo d-flex">
-                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
-                        <div class="todo_time">
-                            <div class="start_time">07:00</div>
-                            <i class="fas fa-sort-down"></i>
-                            <div class="end_time">09:30</div>
-                        </div>
-                        <div class="todo_title">吃早餐</div>
-                    </div>
-                    <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-                        <div class="status_area">
-                            <div class="status d-flex">緊急</div>
-                        </div>
-                        <div class="cancel">
-                            <div class="cancel_btn">
-                                <i class="fas fa-chevron-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_area">
-                        <div class="delete">刪除</div>
-                        <div class="edit">編輯</div>
-                    </div>
-                
-                </li><li class="todo d-flex">
-                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
-                        <div class="todo_time">
-                            <div class="start_time">07:00</div>
-                            <i class="fas fa-sort-down"></i>
-                            <div class="end_time">09:30</div>
-                        </div>
-                        <div class="todo_title">吃早餐</div>
-                    </div>
-                    <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-                        <div class="status_area">
-                            <div class="status d-flex">緊急</div>
-                        </div>
-                        <div class="cancel">
-                            <div class="cancel_btn">
-                                <i class="fas fa-chevron-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_area">
-                        <div class="delete">刪除</div>
-                        <div class="edit">編輯</div>
-                    </div>
-                
-                </li><li class="todo d-flex">
-                    <div class="col-9 d-flex align-items-center"><input type="checkbox" name="" id="">
-                        <div class="todo_time">
-                            <div class="start_time">07:00</div>
-                            <i class="fas fa-sort-down"></i>
-                            <div class="end_time">09:30</div>
-                        </div>
-                        <div class="todo_title">吃早餐</div>
-                    </div>
-                    <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-                        <div class="status_area">
-                            <div class="status d-flex">緊急</div>
-                        </div>
-                        <div class="cancel">
-                            <div class="cancel_btn">
-                                <i class="fas fa-chevron-left"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide_area">
-                        <div class="delete">刪除</div>
-                        <div class="edit">編輯</div>
-                    </div>
-                
-                </li>
-                
+
             </ul>
         </div>
         <div class="add_btn"><i class="fas fa-plus"></i></div>
@@ -395,7 +305,7 @@
                                     <div class="swiper-slide">
                                         <h1>PM</h1>
                                     </div>
-                
+
                                 </div>
                             </div>
                         </div>
@@ -412,18 +322,19 @@
 
             </div>
         </div>
+        <div class="mask"></div>
     </div>
 
-    <div class="mask"></div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
     <script src="script.js"></script>
