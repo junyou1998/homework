@@ -1,13 +1,8 @@
-$blue: #4286e9;
-$purple: #725fef;
-$red: #ed4f4e;
-$orange: #e87f52;
-$green: #45FF99;
+@import "variable";
 
 
 * {
     font-family: "Noto Sans TC", sans-serif;
-    box-sizing: border-box;
 }
 body {
     position: relative;
@@ -69,7 +64,7 @@ body {
         margin: 0;
         padding: 0;
         width: 100%;
-        height: 50vh;
+        height: 55vh;
         padding: 20px 20px;
         overflow: scroll visible;
         
@@ -93,8 +88,8 @@ body {
                 font-size: 20px;
                 // text-decoration:line-through;
             }
-            .status_area {
-                .status {
+            .label_area {
+                .label {
                     background-color: $red;
                     color: white;
                     border-radius: 3px;

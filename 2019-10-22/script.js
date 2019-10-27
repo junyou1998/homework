@@ -34,9 +34,6 @@ var data = [
 
 
 
-
-
-
 data.forEach(function(job) {
     console.log(job);
 
@@ -73,8 +70,8 @@ data.forEach(function(job) {
         <div class="todo_title">${job.job_name}</div>
     </div>
     <div class="col-3 d-flex p-0 align-items-center justify-content-between">
-        <div class="status_area">
-            <div class="status d-flex ${job_label}">${job.job_label}</div>
+        <div class="label_area">
+            <div class="label d-flex ${job_label}">${job.job_label}</div>
         </div>
         <div class="cancel">
             <div class="cancel_btn">
@@ -91,6 +88,63 @@ data.forEach(function(job) {
 
 
   });
+
+for (let month = 1; month <= 12; month++) {
+    if (month < 10) {
+        month = '0' + month
+    }
+    $('.datepicker.month .swiper-wrapper').append(
+        `
+    <div class="swiper-slide">
+        <h1>${month}</h1 >
+    </div >
+    `
+    )
+}
+for (let day = 1; day <= 31; day++) {
+    if (day < 10) {
+        day = '0' + day
+    }
+    $('.datepicker.day .swiper-wrapper').append(
+        `
+    <div class="swiper-slide">
+        <h1>${day}</h1 >
+    </div >
+    `
+    )
+}
+for (let hour = 1; hour <= 12; hour++) {
+    if(hour<10){
+        hour = '0'+hour
+    }
+    $('.datepicker.hour .swiper-wrapper').append(
+        `
+    <div class="swiper-slide">
+        <h1>${hour}</h1 >
+    </div >
+    `
+    )
+}
+for (let min = 0; min < 60; min++) {
+    if (min < 10) {
+        min = '0' + min
+    }
+    $('.datepicker.minute .swiper-wrapper').append(
+        `
+    <div class="swiper-slide">
+        <h1>${min}</h1 >
+    </div >
+    `
+    )
+}
+
+
+console.log($('.datepicker.hour .swiper-slide'))
+
+
+
+
+
 
   var mySwiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
@@ -138,3 +192,4 @@ $('.mask').click(function(){
         $('.mask').toggleClass('active')
     $('.add_btn').toggleClass('rotate')
 })
+

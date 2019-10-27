@@ -1,7 +1,5 @@
 * {
   font-family: "Noto Sans TC", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 body {
@@ -74,7 +72,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 50vh;
+  height: 55vh;
   padding: 20px 20px;
   overflow: scroll visible;
 }
@@ -113,7 +111,7 @@ body {
   font-size: 20px;
 }
 
-.todosArea .todos .todo .status_area .status {
+.todosArea .todos .todo .label_area .label {
   background-color: #ed4f4e;
   color: white;
   border-radius: 3px;
@@ -127,11 +125,11 @@ body {
           align-items: center;
 }
 
-.todosArea .todos .todo .status_area .status.normal {
+.todosArea .todos .todo .label_area .label.normal {
   background-color: #4286e9;
 }
 
-.todosArea .todos .todo .status_area .status.pending {
+.todosArea .todos .todo .label_area .label.pending {
   background-color: #e87f52;
 }
 
@@ -447,4 +445,3 @@ h1 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-/*# sourceMappingURL=style.css.map */
