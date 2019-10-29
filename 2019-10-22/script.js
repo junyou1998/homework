@@ -24,7 +24,7 @@ var data = [
         job_label: '緊急',
         job_status: 1    
     },{
-        job_name: 'ㄚㄚㄚㄚㄚ',
+        job_name: '上課',
         start_time: '15:52',
         end_time: '15:52',
         job_label: '暫緩',
@@ -140,10 +140,6 @@ for (let min = 0; min < 60; min++) {
 
 
 console.log($('.datepicker.hour .swiper-slide'))
-
-
-
-
 
 
   var mySwiper = new Swiper('.swiper-container', {

@@ -30,7 +30,7 @@
         </div>
         <div class="todosArea">
             <ul class="todos">
-                
+
                 <!-- <li class="todo d-flex">
                     <div class="col-9 d-flex align-items-center"><label class="checkbox">
                             <input type="checkbox">
@@ -59,17 +59,17 @@
                     </div>
 
                 </li> -->
-                
+
 
             </ul>
         </div>
         <div class="add_btn"><i class="fas fa-plus"></i></div>
-        <div class="add_panel">
+        <form class="add_panel">
             <div class="form-group">
                 <label for="">事項名稱</label>
                 <input type="text" class="form-control">
                 <label for="">時間</label>
-                
+
                 <div class="row mt-2 start_time">
                     <div class="col-6 d-flex">
                         <div class="datepicker year">
@@ -90,14 +90,14 @@
                         <div class="datepicker time month">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <div class="datepicker time day">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -106,14 +106,14 @@
                         <div class="datepicker time hour">
                             <div class="swiper-container orange">
                                 <div class="swiper-wrapper">
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <div class="datepicker time minute">
                             <div class="swiper-container orange">
                                 <div class="swiper-wrapper">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -160,14 +160,14 @@
                         <div class="datepicker time month">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                
+
                                 </div>
                             </div>
                         </div>
                         <div class="datepicker time day">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                
+
                                 </div>
                             </div>
                         </div>
@@ -176,14 +176,14 @@
                         <div class="datepicker time hour">
                             <div class="swiper-container orange">
                                 <div class="swiper-wrapper">
-                
+
                                 </div>
                             </div>
                         </div>
                         <div class="datepicker time minute">
                             <div class="swiper-container orange">
                                 <div class="swiper-wrapper">
-                
+
                                 </div>
                             </div>
                         </div>
@@ -196,27 +196,40 @@
                                     <div class="swiper-slide">
                                         <h1>PM</h1>
                                     </div>
-                
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center todo_status">
-                    <button class="btn"><span>正常</span></button>
-                    <button class="btn emergency"><span>緊急</span></button>
-                    <button class="btn pending"><span>暫緩</span></button>
+
+                    <div class="group">
+                        <input type="radio" name="status" id="normal">
+                        <label for="normal" class="btn normal"><span>正常</span></label>
+                    </div>
+
+                    <div class="group">
+                        <input type="radio" name="status" id="emergency">
+                        <label for="emergency" class="btn emergency"><span>緊急</span></label>
+                    </div>
+
+                    <div class="group">
+                        <input type="radio" name="status" id="pending">
+                        <label for="pending" class="btn pending"><span>暫緩</span></label>
+                    </div>
+
                 </div>
                 <div class="row justify-content-center add_todo">
-                    <button class="btn add">加入事項</button>
+                    <input type="submit" class="btn add" value="加入事項"></input>
                 </div>
 
             </div>
-        </div>
+        </form>
         <div class="mask"></div>
     </div>
 
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

@@ -4,10 +4,12 @@
 * {
     font-family: "Noto Sans TC", sans-serif;
 }
+
 body {
     position: relative;
     background-color: #222;
 }
+
 .todolist {
     width: 100%;
     height: 100vh;
@@ -17,15 +19,18 @@ body {
     margin: auto;
     background-color: #fff;
 }
+
 .header {
     background-color: $purple;
     color: #fff;
     padding: 10px 20px 60px 20px;
     box-shadow: 0px 0px 10px rgba($purple, 0.6);
     z-index: 2;
+
     .date {
         font-size: 50px;
         color: white;
+
         .week {
             font-size: 30px;
         }
@@ -35,8 +40,10 @@ body {
         font-size: 30px;
     }
 }
+
 .progressArea {
     padding: 20px 20px;
+
     .progress_bar {
         height: 25px;
         width: 100%;
@@ -44,20 +51,24 @@ body {
         margin-bottom: 10px;
         padding: 2px;
         border-radius: 5px;
+
         .progress_status {
             width: 50%;
             height: 100%;
             background-color: $blue;
             border-radius: 3px;
         }
+
         &.danger {
             border: solid $red 3px;
+
             .progress_status {
                 background-color: $red;
             }
         }
     }
 }
+
 .todosArea {
     .todos {
         list-style: none;
@@ -67,7 +78,7 @@ body {
         height: 55vh;
         padding: 20px 20px;
         overflow: scroll visible;
-        
+
         // overflow-y: scroll;
         .todo {
             overflow: hidden;
@@ -78,16 +89,19 @@ body {
             margin-bottom: 20px;
             position: relative;
             border-radius: 5px;
+
             .todo_time {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin: 0 10px;
             }
+
             .todo_title {
                 font-size: 20px;
                 // text-decoration:line-through;
             }
+
             .label_area {
                 .label {
                     background-color: $red;
@@ -97,10 +111,12 @@ body {
                     width: 55px;
                     justify-content: center;
                     align-items: center;
-                    &.normal{
+
+                    &.normal {
                         background-color: $blue;
                     }
-                    &.pending{
+
+                    &.pending {
                         background-color: $orange;
                     }
                 }
@@ -109,6 +125,7 @@ body {
             .cancel {
                 margin-right: 8px;
                 height: 50px;
+
                 .cancel_btn {
                     width: 20px;
                     height: 100%;
@@ -118,15 +135,18 @@ body {
                     align-items: center;
                     transition: .5s;
                     cursor: pointer;
-                    &.rotate{
+
+                    &.rotate {
                         transform: rotate(180deg);
                     }
+
                     .fas {
                         font-size: 20px;
                     }
                 }
             }
-            .slide_area{
+
+            .slide_area {
                 height: 100%;
                 width: 140px;
                 background-color: blue;
@@ -137,17 +157,20 @@ body {
                 transition: .3s;
                 text-decoration: underline;
                 cursor: pointer;
-                &.slide_control{
+
+                &.slide_control {
                     right: 28px;
                 }
-                .delete{
+
+                .delete {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     background-color: $red;
                     flex-grow: 1;
                 }
-                .edit{
+
+                .edit {
                     background-color: $green;
                     display: flex;
                     justify-content: center;
@@ -158,6 +181,7 @@ body {
         }
     }
 }
+
 .add_btn {
     width: 60px;
     height: 60px;
@@ -173,13 +197,15 @@ body {
     align-items: center;
     cursor: pointer;
     z-index: 20;
-    transform:  translate(-50%);
+    transform: translate(-50%);
     transition: .3s;
-    &.rotate{
-        transform:  translate(-50%) rotate(-45deg);
+
+    &.rotate {
+        transform: translate(-50%) rotate(-45deg);
     }
-    
+
 }
+
 .add_panel {
     width: 100%;
     height: 70vh;
@@ -191,45 +217,53 @@ body {
     background-color: #fff;
     transition: 0.5s;
     z-index: 2;
+
     &.extend {
         bottom: 0px;
         padding: 20px;
     }
+
     .todo_status {
-        .btn {
-            background-color: white;
-            outline: none;
-            color: white;
-            padding: 6px 2px;
-            margin: 20px 10px;
-            &:focus {
-                border: solid 1px $blue;
-            }
-            span {
-                background-color: $blue;
-                padding: 3px 20px;
-                border-radius: 3px;
-            }
-            &.emergency {
+        .group {
+            position: relative;
+            .btn {
+                background-color: white;
+                outline: none;
+                color: white;
+                padding: 6px 2px;
+                margin: 20px 10px;
+                cursor: pointer;
                 span {
+                    background-color: $blue;
+                    padding: 3px 20px;
+                    border-radius: 3px;
+                }
+                &.emergency span {
                     background-color: $red;
                 }
-                &:focus {
-                    border: solid 1px $red;
-                }
-            }
-            &.pending {
-                span {
+                &.pending span {
                     background-color: $orange;
                 }
-                &:focus {
-                    border: solid 1px $orange;
-                }
+            }
+            input {
+                position: absolute;
+                opacity: 0;
+            }
+            #normal:checked~.normal {
+                border: solid 2px $blue;
+            }
+            #emergency:checked~.emergency {
+                border: solid 2px $red;
+            }
+            #pending:checked~.pending {
+                border: solid 2px $orange;
             }
         }
+
     }
-    .add_todo{
-        .add{
+
+    .add_todo {
+        .add {
             padding: 3px 20px;
             background-color: $purple;
             color: white;
@@ -237,6 +271,7 @@ body {
         }
     }
 }
+
 .mask {
     width: 100%;
     height: 100vh;
@@ -247,11 +282,13 @@ body {
     background-image: linear-gradient(transparent 70%, rgba(white, 0.7));
     pointer-events: none;
     transition: 0.3s;
+
     &.active {
         background-color: rgba(white, 0.6);
         pointer-events: visible;
     }
 }
+
 h1 {
     padding: 0;
     margin: 0;
@@ -259,22 +296,27 @@ h1 {
     color: #d7d7d7;
     transition: 0.3s;
 }
+
 .datepicker {
     width: 80px;
     height: 80px;
     border-radius: 8px;
     overflow: hidden;
     margin-right: 10px;
+
     &.time {
         width: 55px;
     }
+
     .swiper-container {
         width: 100%;
         height: 100%;
         background-color: $blue;
+
         &.orange {
             background-color: $orange;
         }
+
         .swiper-slide {
             display: flex;
             justify-content: center;
@@ -289,10 +331,12 @@ h1 {
         color: white;
     }
 }
+
 .btn:focus {
     outline: 0;
     box-shadow: none;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -306,19 +350,19 @@ h1 {
     cursor: pointer;
     font-size: 22px;
     user-select: none;
-    
-  }
-  
-  .checkbox input {
+
+}
+
+.checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
     background-color: $purple;
-  }
-  
-  .checkmark {
+}
+
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -327,32 +371,32 @@ h1 {
     background-color: white;
     border-radius: 50%;
     border: solid $purple 2px;
-    
-  }
-  
-  
-  
-  .checkbox input:checked ~ .checkmark {
+
+}
+
+
+
+.checkbox input:checked~.checkmark {
     background-color: $purple;
-  }
-  
-  
-  .checkmark:after {
+}
+
+
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  
-  .checkbox input:checked ~ .checkmark:after {
+}
+
+
+.checkbox input:checked~.checkmark:after {
     display: block;
     border-color: white;
-    
-    
-  }
-  
-  
-  .checkbox .checkmark:after {
+
+
+}
+
+
+.checkbox .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -360,5 +404,5 @@ h1 {
     border: solid white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
-    
-  }
+
+}

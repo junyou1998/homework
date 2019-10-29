@@ -269,38 +269,48 @@ body {
   padding: 20px;
 }
 
-.add_panel .todo_status .btn {
+.add_panel .todo_status .group {
+  position: relative;
+}
+
+.add_panel .todo_status .group .btn {
   background-color: white;
   outline: none;
   color: white;
   padding: 6px 2px;
   margin: 20px 10px;
+  cursor: pointer;
 }
 
-.add_panel .todo_status .btn:focus {
-  border: solid 1px #4286e9;
-}
-
-.add_panel .todo_status .btn span {
+.add_panel .todo_status .group .btn span {
   background-color: #4286e9;
   padding: 3px 20px;
   border-radius: 3px;
 }
 
-.add_panel .todo_status .btn.emergency span {
+.add_panel .todo_status .group .btn.emergency span {
   background-color: #ed4f4e;
 }
 
-.add_panel .todo_status .btn.emergency:focus {
-  border: solid 1px #ed4f4e;
-}
-
-.add_panel .todo_status .btn.pending span {
+.add_panel .todo_status .group .btn.pending span {
   background-color: #e87f52;
 }
 
-.add_panel .todo_status .btn.pending:focus {
-  border: solid 1px #e87f52;
+.add_panel .todo_status .group input {
+  position: absolute;
+  opacity: 0;
+}
+
+.add_panel .todo_status .group #normal:checked ~ .normal {
+  border: solid 2px #4286e9;
+}
+
+.add_panel .todo_status .group #emergency:checked ~ .emergency {
+  border: solid 2px #ed4f4e;
+}
+
+.add_panel .todo_status .group #pending:checked ~ .pending {
+  border: solid 2px #e87f52;
 }
 
 .add_panel .add_todo .add {
@@ -445,3 +455,4 @@ h1 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+/*# sourceMappingURL=style.css.map */
