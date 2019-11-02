@@ -1,6 +1,5 @@
 @import "variable";
 
-
 * {
     font-family: "Noto Sans TC", sans-serif;
 }
@@ -122,62 +121,6 @@ body {
                 }
             }
 
-            .cancel {
-                margin-right: 8px;
-                height: 50px;
-
-                .cancel_btn {
-                    width: 20px;
-                    height: 100%;
-                    color: #b2b2b2;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transition: .5s;
-                    cursor: pointer;
-
-                    &.rotate {
-                        transform: rotate(180deg);
-                    }
-
-                    .fas {
-                        font-size: 20px;
-                    }
-                }
-            }
-
-            .slide_area {
-                height: 100%;
-                width: 140px;
-                background-color: blue;
-                position: absolute;
-                right: -140px;
-                color: white;
-                display: flex;
-                transition: .3s;
-                text-decoration: underline;
-                cursor: pointer;
-
-                &.slide_control {
-                    right: 28px;
-                }
-
-                .delete {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: $red;
-                    flex-grow: 1;
-                }
-
-                .edit {
-                    background-color: $green;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-grow: 1;
-                }
-            }
         }
     }
 }
@@ -198,22 +141,21 @@ body {
     cursor: pointer;
     z-index: 20;
     transform: translate(-50%);
-    transition: .3s;
+    transition: 0.3s;
 
     &.rotate {
         transform: translate(-50%) rotate(-45deg);
     }
-
 }
 
 .add_panel {
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     border-radius: 20px 20px 0 0;
     padding: 100px 0 0 0;
     box-shadow: 0px 0px 10px rgba(black, 0.2);
     position: absolute;
-    bottom: calc(-70vh + 60px);
+    bottom: calc(-80vh + 60px);
     background-color: #fff;
     transition: 0.5s;
     z-index: 2;
@@ -249,17 +191,16 @@ body {
                 position: absolute;
                 opacity: 0;
             }
-            #normal:checked~.normal {
+            #normal:checked ~ .normal {
                 border: solid 2px $blue;
             }
-            #emergency:checked~.emergency {
+            #emergency:checked ~ .emergency {
                 border: solid 2px $red;
             }
-            #pending:checked~.pending {
+            #pending:checked ~ .pending {
                 border: solid 2px $orange;
             }
         }
-
     }
 
     .add_todo {
@@ -341,7 +282,6 @@ h1 {
     display: none;
 }
 
-
 .checkbox {
     display: block;
     position: relative;
@@ -350,7 +290,6 @@ h1 {
     cursor: pointer;
     font-size: 22px;
     user-select: none;
-
 }
 
 .checkbox input {
@@ -371,15 +310,11 @@ h1 {
     background-color: white;
     border-radius: 50%;
     border: solid $purple 2px;
-
 }
 
-
-
-.checkbox input:checked~.checkmark {
+.checkbox input:checked ~ .checkmark {
     background-color: $purple;
 }
-
 
 .checkmark:after {
     content: "";
@@ -387,14 +322,10 @@ h1 {
     display: none;
 }
 
-
-.checkbox input:checked~.checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
     display: block;
     border-color: white;
-
-
 }
-
 
 .checkbox .checkmark:after {
     left: 9px;
@@ -404,5 +335,49 @@ h1 {
     border: solid white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
+}
 
+
+
+.slide-controller {
+    width: calc(100% - 50px);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    .slide-control {
+        height: 100%;
+        .swiper-slide {
+            height: 100%;
+        }
+        .slide-area {
+            display: flex;
+            justify-content: flex-end;
+            .slide-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                color: #999;
+            }
+        }
+        .btns {
+            width: 140px;
+            .del-btn,
+            .edit-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: white;
+                text-decoration: underline;
+            }
+            .del-btn {
+                background-color: $red;
+            }
+            .edit-btn {
+                background-color: $green;
+            }
+        }
+    }
 }

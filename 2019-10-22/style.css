@@ -133,90 +133,6 @@ body {
   background-color: #e87f52;
 }
 
-.todosArea .todos .todo .cancel {
-  margin-right: 8px;
-  height: 50px;
-}
-
-.todosArea .todos .todo .cancel .cancel_btn {
-  width: 20px;
-  height: 100%;
-  color: #b2b2b2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: .5s;
-  transition: .5s;
-  cursor: pointer;
-}
-
-.todosArea .todos .todo .cancel .cancel_btn.rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.todosArea .todos .todo .cancel .cancel_btn .fas {
-  font-size: 20px;
-}
-
-.todosArea .todos .todo .slide_area {
-  height: 100%;
-  width: 140px;
-  background-color: blue;
-  position: absolute;
-  right: -140px;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition: .3s;
-  transition: .3s;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.todosArea .todos .todo .slide_area.slide_control {
-  right: 28px;
-}
-
-.todosArea .todos .todo .slide_area .delete {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #ed4f4e;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-.todosArea .todos .todo .slide_area .edit {
-  background-color: #45FF99;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
 .add_btn {
   width: 60px;
   height: 60px;
@@ -240,8 +156,8 @@ body {
   z-index: 20;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .add_btn.rotate {
@@ -251,13 +167,13 @@ body {
 
 .add_panel {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   border-radius: 20px 20px 0 0;
   padding: 100px 0 0 0;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   position: absolute;
-  bottom: calc(-70vh + 60px);
+  bottom: calc(-80vh + 60px);
   background-color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -455,4 +371,70 @@ h1 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-/*# sourceMappingURL=style.css.map */
+
+.slide-controller {
+  width: calc(100% - 50px);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.slide-controller .slide-control {
+  height: 100%;
+}
+
+.slide-controller .slide-control .swiper-slide {
+  height: 100%;
+}
+
+.slide-controller .slide-control .slide-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.slide-controller .slide-control .slide-area .slide-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35px;
+  color: #999;
+}
+
+.slide-controller .slide-control .btns {
+  width: 140px;
+}
+
+.slide-controller .slide-control .btns .del-btn,
+.slide-controller .slide-control .btns .edit-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+}
+
+.slide-controller .slide-control .btns .del-btn {
+  background-color: #ed4f4e;
+}
+
+.slide-controller .slide-control .btns .edit-btn {
+  background-color: #45FF99;
+}

@@ -4,54 +4,54 @@ var data = [
         start_time: '15:52',
         end_time: '15:52',
         job_label: '普通',
-        job_status: 1    
-    },{
+        job_status: 1
+    }, {
         job_name: '蕭純言',
         start_time: '15:52',
         end_time: '15:52',
         job_label: '緊急',
-        job_status: 0    
-    },{
+        job_status: 0
+    }, {
         job_name: '拉拉拉',
         start_time: '15:52',
         end_time: '15:52',
         job_label: '暫緩',
-        job_status: 0    
-    },{
+        job_status: 0
+    }, {
         job_name: '哈哈哈阿',
         start_time: '15:52',
         end_time: '15:52',
         job_label: '緊急',
-        job_status: 1    
-    },{
+        job_status: 1
+    }, {
         job_name: '上課',
         start_time: '15:52',
         end_time: '15:52',
         job_label: '暫緩',
-        job_status: 1    
+        job_status: 1
     }
 ]
 
 
 
-data.forEach(function(job) {
+data.forEach(function (job) {
     console.log(job);
 
     var job_status = job.job_status
     var job_label = job.job_label
 
 
-    if(job_label=='普通'){
+    if (job_label == '普通') {
         job_label = 'normal'
-    }else if(job_label=='緊急'){
+    } else if (job_label == '緊急') {
         job_label = ''
-    }else if(job_label=='暫緩'){
+    } else if (job_label == '暫緩') {
         job_label = 'pending'
     }
     console.log(job_label)
-    if(job_status == 0){
+    if (job_status == 0) {
         job_status = ''
-    }else if(job_status == 1){
+    } else if (job_status == 1) {
         job_status = ' checked="checked"'
         console.log(7897897)
     }
@@ -73,21 +73,32 @@ data.forEach(function(job) {
         <div class="label_area">
             <div class="label d-flex ${job_label}">${job.job_label}</div>
         </div>
-        <div class="cancel">
-            <div class="cancel_btn">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-        </div>
+        
     </div>
-    <div class="slide_area">
-        <div class="delete">刪除</div>
-        <div class="edit">編輯</div>
-    </div>
+   <div class="slide-controller">
+                        <div class="slide-control">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slide-area">
+                                    <div class="slide-btn">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide btns d-flex">
+                                    <div class="col-6 del-btn" >
+                                        刪除
+                                    </div>
+                                    <div class="col-6 edit-btn">
+                                        編輯
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     
     </li>`)
 
 
-  });
+});
 
 for (let month = 1; month <= 12; month++) {
     if (month < 10) {
@@ -114,8 +125,8 @@ for (let day = 1; day <= 31; day++) {
     )
 }
 for (let hour = 1; hour <= 12; hour++) {
-    if(hour<10){
-        hour = '0'+hour
+    if (hour < 10) {
+        hour = '0' + hour
     }
     $('.datepicker.hour .swiper-wrapper').append(
         `
@@ -142,7 +153,7 @@ for (let min = 0; min < 60; min++) {
 console.log($('.datepicker.hour .swiper-slide'))
 
 
-  var mySwiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
     spaceBetween: 30,
     centeredSlides: true,
@@ -156,36 +167,23 @@ console.log($('.datepicker.hour .swiper-slide'))
 
 
 
-$('.add_btn').click(function(){
+$('.add_btn').click(function () {
     $('.add_panel').toggleClass('extend')
     $('.add_btn').toggleClass('rotate')
     $('.mask').toggleClass('active')
 })
 
-$('.cancel_btn').click(function(){
-    var btn_index = $('.cancel_btn').index(this)
 
-    
-    
-    if ($(`.todo:nth-child(${btn_index + 1}) .slide_area`).hasClass('slide_control')){
-        
-        $(`.todo:nth-child(${btn_index + 1}) .slide_area`).toggleClass('slide_control')
-        $(`.todo:nth-child(${btn_index + 1}) .cancel_btn`).toggleClass('rotate')
-    }
-    else{
-        $('.slide_area').removeClass('slide_control')
-        $('.cancel_btn').removeClass('rotate')
-        console.log(btn_index)
-        $(`.todo:nth-child(${btn_index + 1}) .slide_area`).toggleClass('slide_control')
-        $(`.todo:nth-child(${btn_index + 1}) .cancel_btn`).toggleClass('rotate')
-    }
-    
-        
-})
-$('.mask').click(function(){
+$('.mask').click(function () {
     console.log('dfdf')
     $('.add_panel').toggleClass('extend')
-        $('.mask').toggleClass('active')
+    $('.mask').toggleClass('active')
     $('.add_btn').toggleClass('rotate')
 })
 
+var mySwiper = new Swiper('.slide-control', {
+    slidesPerView: 'auto',
+    initialSlide: 0,
+    resistanceRatio: 0,
+    slideToClickedSlide: true,
+})
