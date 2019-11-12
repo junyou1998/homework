@@ -223,6 +223,154 @@
 
             </div>
         </form>
+        <form class="edit_panel" method="post">
+            <div class="form-group">
+                <label for="job_name">編輯測試事項名稱</label>
+                <input id="job_name" name="job_name" type="text" class="form-control">
+                <label>時間</label>
+        
+                <div class="row mt-2 start_time">
+                    <div class="col-6 d-flex">
+                        <div class="datepicker year">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>2019</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2020</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time month">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time day">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="datepicker time hour">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time minute">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>AM</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>PM</h1>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-center">
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <i class="fas fa-sort-down"></i>
+                    </div>
+                </div>
+                <div class="row mt-2 end_time">
+                    <div class="col-6 d-flex">
+                        <div class="datepicker year">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>2019</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>2020</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time month">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time day">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <div class="datepicker time hour">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker time minute">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="datepicker">
+                            <div class="swiper-container orange">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <h1>AM</h1>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <h1>PM</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center todo_status">
+        
+                    <div class="group">
+                        <input type="radio" name="job_status" id="normal">
+                        <label for="normal" class="btn normal"><span>正常</span></label>
+                    </div>
+        
+                    <div class="group">
+                        <input type="radio" name="job_status" id="emergency">
+                        <label for="emergency" class="btn emergency"><span>緊急</span></label>
+                    </div>
+        
+                    <div class="group">
+                        <input type="radio" name="job_status" id="pending">
+                        <label for="pending" class="btn pending"><span>暫緩</span></label>
+                    </div>
+        
+                </div>
+                <div class="row justify-content-center add_todo">
+                    <input type="submit" class="btn add" value="加入事項"></input>
+                </div>
+        
+            </div>
+        </form>
         <div class="mask"></div>
     </div>
 

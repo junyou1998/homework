@@ -177,6 +177,7 @@ $('.add_btn').click(function () {
 $('.mask').click(function () {
     console.log('dfdf')
     $('.add_panel').toggleClass('extend')
+    // $('.edit_panel').toggleClass('extend')
     $('.mask').toggleClass('active')
     $('.add_btn').toggleClass('rotate')
 })
@@ -187,3 +188,10 @@ var mySwiper = new Swiper('.slide-control', {
     resistanceRatio: 0,
     slideToClickedSlide: true,
 })
+
+
+// $('.edit-btn').click(function () {
+//     $('.edit_panel').toggleClass('extend')
+//     $('.add_btn').toggleClass('rotate')
+//     $('.mask').toggleClass('active')
+// })

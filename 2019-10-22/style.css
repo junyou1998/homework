@@ -407,8 +407,11 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 35px;
+  width: 25px;
   color: #999;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .slide-controller .slide-control .btns {
@@ -437,4 +440,79 @@ h1 {
 
 .slide-controller .slide-control .btns .edit-btn {
   background-color: #45FF99;
+}
+
+.edit_panel {
+  width: 100%;
+  height: 80vh;
+  border-radius: 20px 20px 0 0;
+  padding: 100px 0 0 0;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: calc(-80vh + 60px);
+  background-color: rgba(255, 255, 255, 0.932);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.edit_panel.extend {
+  bottom: 0px;
+  padding: 20px;
+}
+
+.edit_panel.visable {
+  display: none;
+}
+
+.edit_panel .todo_status .group {
+  position: relative;
+}
+
+.edit_panel .todo_status .group .btn {
+  background-color: white;
+  outline: none;
+  color: white;
+  padding: 6px 2px;
+  margin: 20px 10px;
+  cursor: pointer;
+}
+
+.edit_panel .todo_status .group .btn span {
+  background-color: #4286e9;
+  padding: 3px 20px;
+  border-radius: 3px;
+}
+
+.edit_panel .todo_status .group .btn.emergency span {
+  background-color: #ed4f4e;
+}
+
+.edit_panel .todo_status .group .btn.pending span {
+  background-color: #e87f52;
+}
+
+.edit_panel .todo_status .group input {
+  position: absolute;
+  opacity: 0;
+}
+
+.edit_panel .todo_status .group #normal:checked ~ .normal {
+  border: solid 2px #4286e9;
+}
+
+.edit_panel .todo_status .group #emergency:checked ~ .emergency {
+  border: solid 2px #ed4f4e;
+}
+
+.edit_panel .todo_status .group #pending:checked ~ .pending {
+  border: solid 2px #e87f52;
+}
+
+.edit_panel .add_todo .add {
+  padding: 3px 20px;
+  background-color: #725fef;
+  color: white;
+  border-radius: 3px;
 }
